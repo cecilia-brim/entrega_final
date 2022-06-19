@@ -55,7 +55,7 @@ ROOT_URLCONF = 'entrega_final.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/Users/El Guille/Documents/GitHub/entrega_final/entrega_app/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aracno Blog</title>
+</head>
+<body>
+
+<h1>Multiverso Arácnido</h1>
+
+{% if peliculas %}
+
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Pelicula</th>
+        <th scope="col">Año</th>
+        <th scope="col">Trailer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for actor in peliculas %}
+
+        <th scope="row">{{ actor.id}}</th>
+        <td>{{ actor.actor_nombre}}</td>
+        <td>{{ actor.actor_apellido}}</td>
+        <td>{{ actor.pelicula_nombre}}</td>
+        <td>{{ actor.pelicula_año}}</td>
+        <td><a href='{{ actor.pelicula_link}}' target="_blank">{{ actor.pelicula_link}}</a></td>
+
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
+</body>
+</html>
