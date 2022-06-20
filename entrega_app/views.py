@@ -5,8 +5,17 @@ from entrega_app.models import *
 
 # Create your views here.
 
-def index(request):
-    return render(request, 'entrega_app/index.html')
+def Home(request):
+ return render(request, 'Home.html')
+
+
+def quienesomos(request):
+      return render (request ,"quienesomos.html") 
+
+def facebook (request):
+   return render(request , "www.facebook.com")      
+
+
 
 def busqueda_peliculas(request):
 

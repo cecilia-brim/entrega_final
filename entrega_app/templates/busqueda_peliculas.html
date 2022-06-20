@@ -1,21 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aracno Blog</title>
-</head>
-<body>
-    
-    <h1>Buscar película por actor</h1>
 
+{% extends "Home.html" %}
+
+{% load static %}
+
+
+ {% block contenido %}
+ <h1>Busca la pelicula por tu actor favorito </h1>
+ <div class="actores">
+
+      <div> 
+       <h2>Tobey </h2>
+        <img class="" src="static/assets/img/tobey.jpg" alt="">
+         </div>
+
+       <div>
+        <h2>Andrew </h2>
+         <img src="static/assets/img/andrew.jpg" alt="">
+        </div>
+          
+
+    <div>
+      <h2>Tom </h2>
+      <img src="static/assets/img/TomHolland.jpg" alt="">
+       </div>
+     </div>
+    
     <form action="resultado" method="GET">
-        <p>Nombre</p>
-        <input type="text" name="actor_nombre" id="">
-        <input type="submit" value="Buscar">
+        <p class="pinput">Nombre</p>
+        <input class="input" type="text" name="actor_nombre" id="">
+        <input class="botonE" type="submit" value="Buscar">
 
 
     </form>
-</body>
-</html>
+  {% endblock %}
+
+ 

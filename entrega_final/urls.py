@@ -16,8 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from entrega_app import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+
+
 
 urlpatterns = [
+    path("" , views.Home, name="home"),
+    path("quienesomos" , views.quienesomos, name="quienesomos"),
     path('admin/', admin.site.urls),
     path("entrega_app/" , include("entrega_app.urls"))
 ]
+
+
+urlpatterns += staticfiles_urlpatterns()
