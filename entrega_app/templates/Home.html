@@ -33,10 +33,19 @@
                 <a class="boton_iniciarSesion" href="">Debate</a>
                 <a class="boton_iniciarSesion" href="{% url 'busqueda' %}">Peliculas</a>
                 <a class="boton_iniciarSesion" href="{% url 'quienesomos' %}">Quienes Somos</a>
-                <a class="boton_iniciarSesion" href="#signup">Registrate</a>
-                <a class="boton_iniciarSesion" href="#signup">Iniciar Sesion</a>
+                <a class="boton_iniciarSesion" href="{% url 'Register' %}">Registrate</a>
+                {% if not request.user.is_authenticated %}
+                <a class="btn btn-primary" href="{% url 'Login' %}">INICIAR</a>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                <img height="40px" src="{{ url }}" alt="" >
+                <p class="text-muted small mb-4 mb-lg-0">Hola {{user.username}}!</p>
+                {% endif %}
+                
             </div>
         </nav>
+        <a href="{% url 'Logout' %}">Salir</a>
+        <a href="{% url 'EditarPerfil' %}">Editar Perfil</a>
 
      {% block contenido %}
 
