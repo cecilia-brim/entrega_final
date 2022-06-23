@@ -26,7 +26,8 @@ urlpatterns = [
     path("" , views.Home, name="home"),
     path("quienesomos" , views.quienesomos, name="quienesomos"),
     path('admin/', admin.site.urls),
-    path("entrega_app/" , include("entrega_app.urls"))
+    path("entrega_app/" , include("entrega_app.urls")),
+    
 ]
 
 

@@ -6,7 +6,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from entrega_app.forms import UserEditForm , RegisterUserForm
+from entrega_app.forms import AvatarFormulario, UserEditForm , RegisterUserForm
 from entrega_app.models import Avatar
 
 # Create your views here.
@@ -107,3 +107,29 @@ def editarperfil(request):
         miFormulario = UserEditForm(initial ={'email' :usuario.email})
 
     return render(request, "editarPerfil.html" , {"miFormulario":miFormulario , "usuario":usuario})
+
+
+
+@login_required
+def agregarAvatar(request):
+
+    if request.method == "POST":
+
+        miFormulario = AvatarFormulario (request.POST , request.FILES)
+
+        if miFormulario.is_valid:
+
+            U = User.objects.get(username=request.user)
+
+            avatar = Avatar(user=U , imagen= miFormulario.cleaned_data['imagen'])
+
+            avatar.save()
+
+            return render(request, "Home.html")
+
+    else:
+        miFormulario = AvatarFormulario()
+
+    return render(request, "agregarAvatar.html" , {"miFormulario" : miFormulario})
+
+
