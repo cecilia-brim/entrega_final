@@ -8,10 +8,24 @@ body{
 
 }
 .nav{
+    justify-content: space-between;
+    background: linear-gradient(90deg, rgba(244,4,37,1) 37%, rgba(16,1,71,1) 87%);
+}
+.subnav{
     display: flex;
     justify-content: space-between;
-    background-color: aqua;
-    background-image: url(imagen_prog.jpg);
+    background: linear-gradient(90deg, rgba(244,4,37,1) 37%, rgba(16,1,71,1) 87%);
+}
+
+.logo{
+    width: 500px;
+    height: 150px;
+    justify-content: center;
+}
+.botonEsp{
+    display: flex;
+    background: linear-gradient(90deg, rgba(16,1,71,1) 87%);
+
 }
 .div_img{
     width: 70px;
@@ -26,7 +40,7 @@ body{
     font-size: 2rem;
 }
 .imagen_araña{
-    width: 150px;
+    width: 200px;
     height: 150px;
     padding-left: 2rem;
 }
@@ -89,7 +103,7 @@ header h1{
     color:yellow;
     font-size: 2rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
+height: 50px;
 }
 .pinput{
     font-size: 2rem;
@@ -102,8 +116,71 @@ header h1{
     background-color: #0000ff;
     color: whitesmoke;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    width: 70px;
-    height: 35px;
+    width: 105px;
+    height: 53px;
     border-radius: 50px 50px 50px 50px;
 
+}
+ .inicioS{
+    justify-content: center;
+    background-color: #0000ff;
+    background: url("../assets/img/telaraña2.png");
+    width: 388px;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-top: 5%;
+    padding: 3rem;
+    height: 350px;
+    color: #0000ff;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    background-repeat: no-repeat;
+    border: solid;
+ }
+ .inicioS form{
+     justify-content: center;
+     margin-left: 10%;
+     margin-right: 20%;
+     margin-top: 10%;
+     font-size: 23px;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.inicioS a{
+    justify-content: center;
+}
+.registro{
+    justify-content: center;
+    background-color: #0000ff;
+    background: url("../assets/img/telaraña.jpg");
+    width: 388px;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-top: 3%;
+    padding: 3rem;
+    height: 700px;
+    color: rgb(76, 76, 245);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+ border: solid;
+ }
+ .registro form{
+     justify-content: center;
+     margin-left: 10%;
+     margin-right: 20%;
+     margin-top: 10%;
+     font-size: 23px;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.registro h1{
+    justify-content: center;
+
+}
+.registro a{
+    background-color: #0000ff;
+    color: whitesmoke;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 105px;
+    height: 100px;
+    padding: 1rem;
+    border-radius: 50px 50px 50px 50px;
+    font-size: 20px;
+    text-decoration: none;
 }

@@ -2,9 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from entrega_app.models import *
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm ,UserCreationForm
 from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from entrega_app.forms import AvatarFormulario, UserEditForm , RegisterUserForm
 from entrega_app.models import Avatar
@@ -94,19 +93,30 @@ def register(request):
 
 
 @login_required
-def editarperfil(request):
+def editarPerfil(request):
 
     usuario = request.user
 
-    if request.method == 'POST':
-        pass
+    if request.method == "POST":
+    
         miFormulario = UserEditForm(request.POST)
-        return render(request , "Home.html")
 
+        if miFormulario.is_valid():
+
+            informacion = miFormulario.cleaned_data
+
+            usuario.email = informacion['email']
+            password = informacion['password1']
+            usuario.set_password(password)
+            usuario.save()
+
+
+        return render(request , "editarPerfil.html")
+ 
     else:
-        miFormulario = UserEditForm(initial ={'email' :usuario.email})
+        miFormulario = UserEditForm(initial ={'email':usuario.email})
 
-    return render(request, "editarPerfil.html" , {"miFormulario":miFormulario , "usuario":usuario})
+    return render(request , "editarPerfil.html" , {"miFormulario":miFormulario , "usuario":usuario})
 
 
 
