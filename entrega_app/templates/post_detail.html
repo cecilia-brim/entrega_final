@@ -1,0 +1,19 @@
+{% extends "Home.html" %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+
+
+     <h2 class="title">{{ post.title }}</h2>
+
+     <small>Posted at {{ post.date_added }}</small>
+
+     <p><strong>{{ post.intro }}</strong></p>
+
+     <p>{{ post.body }}</p>
+
+
+{% endblock %}
