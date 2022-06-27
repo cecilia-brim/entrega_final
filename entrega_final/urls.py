@@ -19,13 +19,16 @@ from entrega_app import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
-
+from entrega_app.views import post , post_detail
 
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path("" , views.Home, name="home"),
     path("quienesomos" , views.quienesomos, name="quienesomos"),
-    path('admin/', admin.site.urls),
+    path('post' , post , name='Post'),
+    path('<slug:slug>/' , post_detail , name='Post_detail' ),
+    
     path("entrega_app/" , include("entrega_app.urls")),
     
 ]

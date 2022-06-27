@@ -14,3 +14,13 @@ class Peliculas(models.Model):
 class Avatar(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     imagen = models.ImageField(upload_to = 'avatares' , null= True , blank = True)
+
+class Post(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField()
+    intro = models.TextField()
+    body = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-date_added']

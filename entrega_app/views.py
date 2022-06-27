@@ -6,7 +6,7 @@ from django.contrib.auth.forms import AuthenticationForm ,UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from entrega_app.forms import AvatarFormulario, UserEditForm , RegisterUserForm
-from entrega_app.models import Avatar
+from entrega_app.models import Avatar , Post
 
 # Create your views here.
 
@@ -141,5 +141,19 @@ def agregarAvatar(request):
         miFormulario = AvatarFormulario()
 
     return render(request, "agregarAvatar.html" , {"miFormulario" : miFormulario})
+
+
+def post(request):
+    posts = Post.objects.all()
+
+
+    return render(request, 'post.html' , {'post' : posts })
+
+
+def post_detail(request , slug):
+    post = Post.objects.get(slug=slug)
+
+
+    return render(request, 'post_detail.html' , {'post' : post })
 
 

@@ -9,16 +9,18 @@ from django.contrib.auth import login, logout, authenticate
 
 
 urlpatterns = [
+
     path("" , views.Home ,name='Home'),
     path('busqueda' , views.busqueda_peliculas, name='busqueda'),
     path('resultado' , views.resultado_peliculas, name='resultado'), 
     path("quienesomos" , views.quienesomos, name='quienesomos'),
-    path('login' , views.login_request , name='Login'),
+    path('login', views.login_request , name='Login'),
     path('register' , views.register , name = 'Register'),
     path('logout' , LogoutView.as_view(template_name = 'logout.html'), name='Logout'),
     path('editarPerfil' , views.editarPerfil , name="editarPerfil"),
-    path('agregarAvatar' , views.agregarAvatar , name = "AgregarAvatar")
-    
-    ]
+    path('agregarAvatar' , views.agregarAvatar , name = "AgregarAvatar"),
+    path('editarPerfil' ,views.editarPerfil, name="EditarPerfil"),
+    path('agregarAvatar' , views.agregarAvatar , name = "AgregarAvatar"),
+ ]
 
 urlpatterns += staticfiles_urlpatterns()
