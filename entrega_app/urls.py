@@ -8,6 +8,7 @@ from django.contrib.auth import login, logout, authenticate
 
 
 
+
 urlpatterns = [
 
     path("" , views.Home ,name='Home'),
@@ -21,6 +22,8 @@ urlpatterns = [
     path('agregarAvatar' , views.agregarAvatar , name = "AgregarAvatar"),
     path('editarPerfil' ,views.editarPerfil, name="EditarPerfil"),
     path('agregarAvatar' , views.agregarAvatar , name = "AgregarAvatar"),
+    #path('blogPost', views.BlogPostView.as_view(), name='blogPost'),
+    #path('<slug>:<slug>/', views.PostDetailView.as_view(), name='post-detail'),
  ]
 
 urlpatterns += staticfiles_urlpatterns()

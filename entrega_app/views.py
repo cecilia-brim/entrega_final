@@ -1,3 +1,4 @@
+from django.forms import SlugField
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
@@ -7,7 +8,8 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from entrega_app.forms import AvatarFormulario, UserEditForm , RegisterUserForm
 from entrega_app.models import Avatar , Post
-
+from django.views.generic import TemplateView
+from django.views.generic.detail import DetailView
 # Create your views here.
 
 def Home(request):
@@ -19,8 +21,6 @@ def quienesomos(request):
 
 def facebook (request):
    return render(request , "www.facebook.com")      
-
-
 
 def busqueda_peliculas(request):
 
@@ -69,7 +69,6 @@ def login_request(request):
 
     return render(request, "login.html" , {"form": form})
 
-
 def register(request):
 
     if request.method == 'POST':
@@ -92,7 +91,7 @@ def register(request):
     return render(request, "register.html" , {"form" : form})
 
 
-@login_required
+#@login_required
 def editarPerfil(request):
 
     usuario = request.user
@@ -119,8 +118,7 @@ def editarPerfil(request):
     return render(request , "editarPerfil.html" , {"miFormulario":miFormulario , "usuario":usuario})
 
 
-
-@login_required
+#@login_required
 def agregarAvatar(request):
 
     if request.method == "POST":
@@ -145,9 +143,9 @@ def agregarAvatar(request):
 
 def post(request):
     posts = Post.objects.all()
+    context = {'post' : post}
 
-
-    return render(request, 'post.html' , {'post' : posts })
+    return render(request, 'blog_post.html' , context)
 
 
 def post_detail(request , slug):
@@ -155,5 +153,4 @@ def post_detail(request , slug):
 
 
     return render(request, 'post_detail.html' , {'post' : post })
-
 
