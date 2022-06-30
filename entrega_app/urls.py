@@ -22,8 +22,8 @@ urlpatterns = [
     path('agregarAvatar' , views.agregarAvatar , name = "AgregarAvatar"),
     path('editarPerfil' ,views.editarPerfil, name="EditarPerfil"),
     path('agregarAvatar' , views.agregarAvatar , name = "AgregarAvatar"),
-    #path('blogPost', views.BlogPostView.as_view(), name='blogPost'),
-    #path('<slug>:<slug>/', views.PostDetailView.as_view(), name='post-detail'),
+    path('Post', views.post, name='Post'),
+    
  ]
 
 urlpatterns += staticfiles_urlpatterns()
