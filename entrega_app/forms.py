@@ -5,14 +5,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Post, Comentario
 
-class Peliculas(forms.Form):
-    
-    actor_nombre = forms.CharField(max_length=40)
-    actor_apellido = forms.CharField(max_length=40)
-    pelicula_nombre = forms.CharField(max_length=40)
-    pelicula_año = forms.IntegerField()
-    pelicula_link = forms.URLField(max_length=2500)
-
 
 class RegisterUserForm(UserCreationForm):
 

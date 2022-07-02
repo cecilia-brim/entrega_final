@@ -31,8 +31,8 @@ def resultado_peliculas(request):
     if request.GET['actor_nombre']:
 
         actor_nombre = request.GET['actor_nombre']
-        peliculas = Peliculas.objects.filter(actor_nombre__icontains = actor_nombre)
-        return render(request, 'resultado_peliculas.html', {'peliculas': peliculas})
+        peliculas = Peliculas.objects.filter(actor_nombre__icontains=actor_nombre)
+        return render(request, 'resultado_peliculas.html',{'peliculas':peliculas})
 
     else:
         respuesta = 'Datos ingreseados inválidos'
