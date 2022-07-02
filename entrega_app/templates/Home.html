@@ -41,7 +41,7 @@
 
             <div class="container">   
                 <a class="boton_iniciarSesion" href="{% url 'Home' %}">Home</a>
-                <a class="boton_iniciarSesion" href="{% url 'Post' %}">Posteos</a>
+                <a class="boton_iniciarSesion" href="{% url 'post' %}">Posteos</a>
                 <a class="boton_iniciarSesion" href="{% url 'busqueda' %}">Peliculas</a>
                 <a class="boton_iniciarSesion" href="{% url 'quienesomos' %}">Quienes Somos</a>
                 <a class="boton_iniciarSesion" href="{% url 'Register' %}">Registrate</a>
@@ -55,18 +55,16 @@
                 
             </div>
         </nav>
-    
+        
        
 
      {% block contenido %}
+     <header class="masthead">
+        <h1><b>Bienvenidos a tu AragnoBLOG</b></h1>
 
+    </header> 
        
-         <header class="masthead">
-            <h1><b>Bienvenidos a tu AragnoBLOG</b></h1>
-         
-                                
-
-        </header> 
+        
    {% endblock %}
 
 

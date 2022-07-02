@@ -3,17 +3,20 @@
 {% load static %}
 
 
-{% block contenido %}
+{% block contenido %}  
+<a href="{% url 'editar_post' posts.id %}" style="color: white;">Editar</a> <a href="{% url 'borrar_post' posts.id %}" style="color: white;">borrar</a>
+<br>
+     <div>
+          <img src="{{posts.imagen.url}}" style="height: 400px;">
+     </div>
 
+     <h2 class="title">{{posts.titulo}}</h2>
 
+     <small> {{posts.date_added}}</small>
 
-     <h2 class="title">{{ post.title }}</h2>
+     <p><strong>{{posts.intro}}</strong></p>
 
-     <small>Posted at {{ post.date_added }}</small>
-
-     <p><strong>{{ post.intro }}</strong></p>
-
-     <p>{{ post.body }}</p>
+     <p>{{posts.mensaje}}</p>
 
 
 {% endblock %}

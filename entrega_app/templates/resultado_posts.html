@@ -1,0 +1,17 @@
+{% extends "Home.html" %}
+
+{% load static %}
+
+ {% block contenido %}
+
+
+ 
+ {% for post in posts %}
+ <ul>
+     <li>{{post.titulo}}
+         {{post.intro}} <a href="{% url 'post_detail' post.id %}">Leer mas</a></li> 
+ </ul>
+ 
+ {% endfor %}
+
+{% endblock %}

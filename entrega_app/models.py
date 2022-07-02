@@ -1,9 +1,7 @@
 from turtle import title
-from click import option
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
-from pandas import options
 
 # Create your models here.
 class Peliculas(models.Model):
@@ -22,14 +20,11 @@ class Avatar(models.Model):
 
 class Post(models.Model):
     titulo = models.CharField(max_length=255)
-    slug = models.SlugField()
     intro = models.TextField()
-    mensaje = models.TextField()
+    mensaje = models.TextField() #modificar
     imagen = models.ImageField(null=True, upload_to='post', default='placeholder.png')
+    #autor = models.CharField(max_length=60) #agregar
     date_added = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ['-date_added']
 
     def __str__(self):
         return self.titulo
@@ -44,8 +39,5 @@ class Comentario(models.Model):
 
     def __str__(self):
         return str(self.autor) + ' | ' + str( self.fecha)
-
-
-
 
 

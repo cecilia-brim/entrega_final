@@ -26,8 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("" , views.Home, name="home"),
     path("quienesomos" , views.quienesomos, name="quienesomos"),
-    path('post' , post , name='Post'),
-    path('<slug:slug>/' , post_detail , name='Post_detail' ),
+    #path('post' , post , name='Post'),
+    
     
     path("entrega_app/" , include("entrega_app.urls")),
     

@@ -5,14 +5,28 @@
 
  {% block contenido %}
 
+ {% if sinResultados %}
+ <h3 style='color: yellow;'>{{sinResultados}}</h3>
+ {% endif %}
+
+<a href="{% url 'crear_post' %}">Crear</a> 
+
+
+<form action="{% url 'buscar_post' %}" method="GET">
+    <p class="pinput">Nombre</p>
+    <input type="text" name="titulo">
+    <input type="submit" value="Buscar">
+</form>
+
 <h1>Blooooooog</h1>
-
-
-    {% for post in posts %}
-    <a href="{% url 'post-detail' slug=post.slug %}">
-    {{post.title}}
-    {{post.excerpt}}
+    
+{% for post in posts %}
+    <ul>
+        <li>{{post.titulo}}
+            {{post.intro}} <a href="{% url 'post_detail' post.id %}">Leer mas</a></li> 
+    </ul>
+    
     {% endfor %}
-    </a>
+    
 
 {% endblock %}

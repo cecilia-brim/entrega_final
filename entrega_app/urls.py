@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.urls import path
 from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -22,7 +23,12 @@ urlpatterns = [
     path('agregarAvatar' , views.agregarAvatar , name = "AgregarAvatar"),
     path('editarPerfil' ,views.editarPerfil, name="EditarPerfil"),
     path('agregarAvatar' , views.agregarAvatar , name = "AgregarAvatar"),
-    path('Post', views.post, name='Post'),
+    path('post', views.post, name='post'),
+    path('post_detail/<int:id>', views.post_detail, name='post_detail'),
+    path('crear_post', views.crear_post, name='crear_post'),
+    path('editar_post/<int:id>', views.editar_post, name='editar_post'),
+    path('borrar_post/<int:id>', views.borrar_post, name='borrar_post'),
+    path('buscar_post', views.buscar_post, name='buscar_post')
     
  ]
 

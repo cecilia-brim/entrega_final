@@ -1,0 +1,20 @@
+{% extends "Home.html" %}
+
+ {% load static %}
+    
+    
+ {% block contenido %}
+
+ <form action="/entrega_app/crear_post" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {% if error %}
+    <h3 style='color: yellow;'>{{error}}</h3>
+    {% endif %}
+
+    {{formulario.as_p}}
+    <input type="hidden" name="date_added" value="{{fecha}}">
+    <input type="submit" value="Crear">
+ </form>
+
+ {% endblock %}

@@ -1,7 +1,9 @@
+from pyexpat import model
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from .models import Post, Comentario
 
 class Peliculas(forms.Form):
     
@@ -43,3 +45,36 @@ class UserEditForm(UserCreationForm):
 class AvatarFormulario(forms.Form):
     imagen = forms.ImageField()
 #height_field=None, width_field=None, max_length=100
+
+class Crear_Post_Form(forms.ModelForm):
+    titulo = forms.CharField(max_length=255)
+    intro = forms.CharField(max_length=255)
+    mensaje = forms.CharField(widget=forms.Textarea)
+    imagen = forms.ImageField()
+
+    class Meta:
+        model = Post
+        fields = ('titulo', 'intro', 'mensaje','imagen')
+
+class Post_Validate(forms.Form):
+    titulo = forms.CharField(max_length=255)
+    intro = forms.CharField(max_length=255)
+    mensaje = forms.CharField(widget=forms.Textarea)
+    imagen = forms.ImageField()
+    date_added = forms.DateField()
+
+class Post_Edit_Validate(forms.Form):
+    titulo = forms.CharField(max_length=255)
+    intro = forms.CharField(max_length=255)
+    mensaje = forms.CharField(widget=forms.Textarea)
+    
+
+class Editar_Post_Form(forms.ModelForm):
+    titulo = forms.CharField(max_length=255)
+    intro = forms.CharField(max_length=255)
+    mensaje = forms.CharField(widget=forms.Textarea)
+    
+
+    class Meta:
+        model = Post
+        fields = ('titulo', 'intro', 'mensaje')

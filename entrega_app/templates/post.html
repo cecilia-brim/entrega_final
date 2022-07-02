@@ -16,7 +16,7 @@
 
             <p>{{ post.intro }}</p>
 
-            <a href="{% url 'Post_detail' post.slug %} ">Leer mas</a>
+            <a href="{% url 'post_detail' post.id %} ">Leer mas</a>
 
         </div>
     {% endfor %}
