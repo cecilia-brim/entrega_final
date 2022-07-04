@@ -70,3 +70,15 @@ class Editar_Post_Form(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('titulo', 'intro', 'mensaje')
+
+class ComentarioForm(forms.ModelForm):
+    
+    contenido = forms.CharField(widget = forms.Textarea(attrs=({'rows' : 4,}) ))
+    class Meta:
+        model = Comentario
+        fields = ['contenido' ]
+
+class Comentario_Validate(forms.Form):
+    autor = forms.CharField(max_length=60)
+    email = forms.EmailField()
+    contenido = forms.CharField(widget = forms.Textarea(attrs=({'rows' : 4,}) ))

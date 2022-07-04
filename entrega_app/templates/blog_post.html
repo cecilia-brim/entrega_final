@@ -9,13 +9,13 @@
  <h3 style='color: yellow;'>{{sinResultados}}</h3>
  {% endif %}
 
-<a href="{% url 'crear_post' %}">Crear</a> 
+<a class= 'boton_iniciarSesion' href="{% url 'crear_post' %}">Crear</a> 
 
 
 <form action="{% url 'buscar_post' %}" method="GET">
     <p class="pinput">Nombre</p>
     <input type="text" name="titulo">
-    <input type="submit" value="Buscar">
+    <input class= 'botonE' type="submit" value="Buscar">
 </form>
 
 <h1>Blooooooog</h1>

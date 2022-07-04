@@ -46,15 +46,17 @@ body{
 }
 
 .boton_iniciarSesion{
-    display: flex;
-height: 50px;
+display: flex;
+height: 60px;
 width: 90px;
 color: #0000ff;
 text-decoration-line: none;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 background-color: red;
 background: url("../assets/img/imagen_logoS.jpg");
-padding: 10px;
+padding: 9px;
+border-radius: 50px 50px 50px 50px;
+justify-content: center;
 
 
 }
@@ -117,7 +119,7 @@ height: 50px;
     color: whitesmoke;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     width: 105px;
-    height: 53px;
+    height: 50px;
     border-radius: 50px 50px 50px 50px;
 
 }
@@ -129,7 +131,7 @@ height: 50px;
     margin-left: 33%;
     margin-right: 33%;
     margin-top: 5%;
-    padding: 3rem;
+    padding: 1rem;
     height: 350px;
     color: #0000ff;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
@@ -144,6 +146,10 @@ height: 50px;
      font-size: 23px;
      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.helptext {
+    display: none;
+  }
 .inicioS a{
     justify-content: center;
 }
@@ -156,8 +162,8 @@ height: 50px;
     margin-right: 33%;
     margin-top: 3%;
     padding: 3rem;
-    height: 700px;
-    color: rgb(76, 76, 245);
+    height: 800px;
+    color: rgb(241, 245, 11);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
  border: solid;
  }
@@ -183,4 +189,57 @@ height: 50px;
     border-radius: 50px 50px 50px 50px;
     font-size: 20px;
     text-decoration: none;
+}
+.registro li{
+    display: none;
+}
+.crearPost{
+    justify-content: center;
+    background-color: #0000ff;
+    background: url("../assets/img/telaraña.jpg");
+    width: 488px;
+    margin-left: 33%;
+    margin-right: 30%;
+    margin-top: 3%;
+    padding: 3rem;
+    height: 800px;
+    color: rgb(241, 245, 11);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+ border: solid;
+font-size: 20px;
+}
+.editarPerfil{
+    justify-content: center;
+    background-color: #0000ff;
+    background: url("../assets/img/telaraña.jpg");
+    width: 538px;
+    margin-left: 33%;
+    margin-right: 30%;
+    margin-top: 3%;
+    padding: 3rem;
+    height: 450px;
+    color: rgb(241, 245, 11);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+ border: solid;
+font-size: 30px;
+}
+
+.botonV{
+    display: flex;
+    height: 60px;
+    width: 90px;
+    color: #0000ff;
+    text-decoration-line: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: red;
+    background: url("../assets/img/imagen_logoS.jpg");
+    padding: 9px;
+    border-radius: 50px 50px 50px 50px;
+    justify-content: center;
+    
+}
+.botonVi{
+
+    justify-content: center;
+    margin-left: 50%;
 }

@@ -28,8 +28,8 @@ urlpatterns = [
     path('crear_post', views.crear_post, name='crear_post'),
     path('editar_post/<int:id>', views.editar_post, name='editar_post'),
     path('borrar_post/<int:id>', views.borrar_post, name='borrar_post'),
-    path('buscar_post', views.buscar_post, name='buscar_post')
-    
+    path('buscar_post', views.buscar_post, name='buscar_post'),
+        
  ]
 
 urlpatterns += staticfiles_urlpatterns()

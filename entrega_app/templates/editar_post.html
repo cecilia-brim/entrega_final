@@ -5,7 +5,7 @@
     
  {% block contenido %}
 
- <form action="" method="POST">
+ <form class= 'crearPost' action="" method="POST">
     {% csrf_token %}
 
     {% if error %}
@@ -14,7 +14,7 @@
 
     {{formulario.as_p}}
     
-    <input type="submit" value="Crear">
+    <input class='botonE'  type="submit" value="Crear">
  </form>
 
  {% endblock %}

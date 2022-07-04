@@ -18,5 +18,39 @@
 
      <p>{{posts.mensaje}}</p>
 
+     <div class="comentario block">
+          <div class="container"></div>
+                
+               <h2>Comentarios</h2>
+               {% for c in comentarios %}
+               <h3 class="subtitle">{{c.autor}}</h3>
+
+                <small>{{c.fecha}}</small>
+
+                 <p>{{c.contenido}}</p>
+
+              </div>
+              {% endfor %}
+         </div>  
+   
+   
+   <div class="comentario">
+        <h2>Agregar comentario</h2>
+
+        <form action="" method="POST">
+          {% csrf_token %}
+  
+          {{form.as_p}}
+          <input type="hidden" name="autor" value="{{user.username}}">
+          <input type="hidden" name="email" value="{{user.email}}">
+          
+  
+          <button class="botonE" type="submit">Comentar</button>
+          
+  
+  
+      </form>
+     </div>
+
 
 {% endblock %}

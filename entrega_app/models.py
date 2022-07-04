@@ -31,13 +31,13 @@ class Post(models.Model):
 
 
 class Comentario(models.Model):
-
-    autor = models.ForeignKey(Post, on_delete = models.CASCADE, null=False, blank=False)
+    id_post = models.IntegerField(null=False)
+    autor = models.CharField(max_length=60)
     email = models.EmailField()
     contenido = models.TextField(max_length=1500)
     fecha = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
+    def _str_(self):
         return str(self.autor) + ' | ' + str( self.fecha)
 
 

@@ -19,12 +19,15 @@ def Home(request):
 def quienesomos(request):
       return render (request ,"quienesomos.html") 
 
+
 def facebook (request):
    return render(request , "www.facebook.com")      
+
 
 def busqueda_peliculas(request):
 
     return render(request, 'busqueda_peliculas.html')
+
 
 def resultado_peliculas(request):
 
@@ -38,6 +41,7 @@ def resultado_peliculas(request):
         respuesta = 'Datos ingreseados inválidos'
     
     return HttpResponse(respuesta)
+
 
 def login_request(request):
 
@@ -73,6 +77,7 @@ def login_request(request):
 
     return render(request, "login.html" , {"form": form})
 
+
 def register(request):
 
     if request.method == 'POST':
@@ -93,7 +98,6 @@ def register(request):
        form = RegisterUserForm()
 
     return render(request, "register.html" , {"form" : form})
-
 
 @login_required
 def editarPerfil(request):
@@ -120,7 +124,6 @@ def editarPerfil(request):
         miFormulario = UserEditForm(initial ={'email':usuario.email})
 
     return render(request , "editarPerfil.html" , {"miFormulario":miFormulario , "usuario":usuario})
-
 
 @login_required
 def agregarAvatar(request):
@@ -153,14 +156,26 @@ def post(request):
 
 
 def post_detail(request , id):
-
+    
     posts = Post.objects.get(id=id)
-    datos = {'posts' : posts }
-    print(datos)
+    comentarios = Comentario.objects.filter(id_post=id)
+    if request.method == "POST":
+        comentario = Comentario_Validate(request.POST)
+        
+        if comentario.is_valid():
+            valores=comentario.cleaned_data
+            nuevoComentario = Comentario(id_post=id,autor=valores['autor'],email=valores['email'],contenido=valores['contenido'])
+            nuevoComentario.save()
+            form = ComentarioForm()
+            comentarios = Comentario.objects.all()
+            
+            datos = {'posts' : posts , 'form' : form, 'comentarios' : comentarios}
+            return render(request, 'post_detail.html' , datos)
+    form = ComentarioForm()
+    datos = {'posts' : posts , 'form' : form, 'comentarios' : comentarios}
+    return render(request, 'post_detail.html' , datos)
 
-    return render(request, 'post_detail.html' , {'posts':posts})
-
-
+@login_required
 def crear_post(request):
 
 
@@ -185,6 +200,7 @@ def crear_post(request):
     documento = {'formulario':formulario}
     return render (request, 'crear_post.html',documento)
 
+@login_required
 def editar_post (request, id):
     post = Post.objects.get(id=id)
 
@@ -209,13 +225,14 @@ def editar_post (request, id):
     formulario = Editar_Post_Form (initial = {'titulo':post.titulo, 'intro':post.intro,'mensaje':post.mensaje})
     return render (request, 'editar_post.html',{'formulario':formulario})   
 
-
+@login_required
 def borrar_post(request,id):
     post = Post.objects.get(id=id)
     post.delete()
 
     posts = Post.objects.all()
     return render (request, 'blog_post.html',{'posts':posts})
+
 
 def buscar_post (request):
 
@@ -229,4 +246,4 @@ def buscar_post (request):
             posts = Post.objects.all()
             return render (request, 'blog_post.html',{'posts':posts,'sinResultados':sinResultados})
 
-       
+
