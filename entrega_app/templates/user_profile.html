@@ -1,0 +1,24 @@
+{% extends "Home.html" %}
+
+{% load static %}
+
+
+ {% block contenido %}
+
+<h1>Mi perfil</h1>
+
+ 
+       <div class="perfil">
+
+          <h2>{{datos.username}}</h2>
+          <h2>{{datos.last_name}}</h2>
+          <h2>{{datos.email}}</h2>
+          <h2>{{datos.first_name}}</h2>
+         
+
+
+          <a class="boton_iniciarSesion" href="{% url 'editarPerfil' %}">Editar Perfil</a>
+        </div>
+
+
+{% endblock %}

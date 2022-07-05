@@ -64,13 +64,15 @@ def login_request(request):
                     return render(request, 'Home.html' , {"url":avatares[0].imagen.url})
                 else:
                     return render(request, 'Home.html' , {"url":default})
-               
-
             else:
-                return render(request, "login.html" , {"mensaje":"Error, datos incorrectos"})
+                error = f'Error, Usted no esta registrado'
+                dato = {'error':error}
+                return render(request, "Home.html" , dato )
         
         else:
-            return render(request, "Home.html" , {"mensaje":"Error, formulario erroneo"})
+            error = f'Error, datos incorrectos'
+            dato = {'error':error}
+            return render(request, "Home.html" , dato )
 
     
     form = AuthenticationForm()
@@ -118,7 +120,7 @@ def editarPerfil(request):
             usuario.save()
 
 
-        return render(request , "editarPerfil.html")
+        return render(request , "Home.html")
  
     else:
         miFormulario = UserEditForm(initial ={'email':usuario.email})
@@ -246,4 +248,10 @@ def buscar_post (request):
             posts = Post.objects.all()
             return render (request, 'blog_post.html',{'posts':posts,'sinResultados':sinResultados})
 
+
+
+def Perfil (request):
+    datos = request.user
+    context = {'datos': datos}
+    return render(request, 'user_profile.html' , context)
 

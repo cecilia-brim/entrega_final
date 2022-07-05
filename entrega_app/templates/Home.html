@@ -29,7 +29,8 @@
 <div>                <img class="logo" src="static/assets/img/S-Logo.jpg" alt="Spider Man"></a>           
 </div>
         <div class="botonEsp" 
-  >  <a class="boton_iniciarSesion" href="{% url 'editarPerfil' %}">Editar Perfil</a>
+  >  <a class="boton_iniciarSesion" href="{% url 'Perfil' %}">Mi Perfil</a>
+     
 
              <a class="boton_iniciarSesion" href="{% url 'Logout' %}">Salir</a>
            
@@ -60,6 +61,14 @@
 
      {% block contenido %}
 
+
+        <div>
+            {% if error %}
+             <h3 style='color: yellow;'>{{error}}</h3>
+             <a class="boton_iniciarSesion" href="{% url 'Login' %}">VOLVER</a>
+            {% endif %}
+
+        </div>
 
      <header class="masthead">
         <h1><b>Bienvenidos a tu AragnoBLOG</b></h1>
