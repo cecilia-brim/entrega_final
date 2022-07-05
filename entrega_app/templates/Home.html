@@ -28,6 +28,8 @@
                         </div>
 <div>                <img class="logo" src="static/assets/img/S-Logo.jpg" alt="Spider Man"></a>           
 </div>
+
+        {% if request.user.is_authenticated %}
         <div class="botonEsp" 
   >  <a class="boton_iniciarSesion" href="{% url 'Perfil' %}">Mi Perfil</a>
      
@@ -35,6 +37,8 @@
              <a class="boton_iniciarSesion" href="{% url 'Logout' %}">Salir</a>
            
      </div>
+
+     {% endif %}
  </section>
           
         <nav class="navbar ">
@@ -64,7 +68,7 @@
      <div class="botonVi">
         <a class="botonV" href="{% url 'videoPresentacion' %}">Presentacion</a>
     </div>
-    
+
         <div>
             {% if error %}
              <h3 style='color: yellow;'>{{error}}</h3>
