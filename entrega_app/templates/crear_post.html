@@ -8,6 +8,8 @@
  <form class= 'crearPost' action="/entrega_app/crear_post" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
 
+   <h1>Crear Post</h1>
+
     {% if error %}
     <h3 style='color: yellow;'>{{error}}</h3>
     {% endif %}

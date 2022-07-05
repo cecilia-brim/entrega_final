@@ -255,3 +255,6 @@ def Perfil (request):
     context = {'datos': datos}
     return render(request, 'user_profile.html' , context)
 
+
+def video (request):
+ return render(request , 'video.html')

@@ -30,7 +30,8 @@ urlpatterns = [
     path('borrar_post/<int:id>', views.borrar_post, name='borrar_post'),
     path('buscar_post', views.buscar_post, name='buscar_post'),
     path('Perfil' , views.Perfil , name='Perfil'),
-    path('Perfil/<str:username>/', views.Perfil , name='Perfil')
+    path('Perfil/<str:username>/', views.Perfil , name='Perfil'),
+    path('video', views.video , name= 'videoPresentacion'),
         
  ]
 

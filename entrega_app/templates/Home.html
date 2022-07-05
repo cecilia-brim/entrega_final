@@ -61,7 +61,10 @@
 
      {% block contenido %}
 
-
+     <div class="botonVi">
+        <a class="botonV" href="{% url 'videoPresentacion' %}">Presentacion</a>
+    </div>
+    
         <div>
             {% if error %}
              <h3 style='color: yellow;'>{{error}}</h3>

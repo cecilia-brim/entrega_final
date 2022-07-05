@@ -4,7 +4,7 @@
 
 
 {% block contenido %}  
-<a href="{% url 'editar_post' posts.id %}" style="color: white;">Editar</a> <a href="{% url 'borrar_post' posts.id %}" style="color: white;">borrar</a>
+<a class="boton_iniciarSesion" href="{% url 'editar_post' posts.id %}" style="color: white;">Editar</a> <a class="boton_iniciarSesion" href="{% url 'borrar_post' posts.id %}" style="color: white;">borrar</a>
 <br>
      <div>
           <img src="{{posts.imagen.url}}" style="height: 400px;">
